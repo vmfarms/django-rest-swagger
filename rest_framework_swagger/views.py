@@ -106,7 +106,8 @@ class SwaggerResourcesView(APIDocView):
                      if self.handle_resource_access(request, resource)]
 
         for path in resources:
-            apis.append({ 'path': '/%s' % path, })
+            apis.append({'path': '/%s' % path, })
+
         return Response({
             'apiVersion': rfs.SWAGGER_SETTINGS.get('api_version', ''),
             'swaggerVersion': '1.2',
